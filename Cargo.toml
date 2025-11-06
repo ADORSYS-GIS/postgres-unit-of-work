@@ -1,0 +1,29 @@
+[package]
+name = "postgres-unit-of-work"
+version = "0.1.0"
+edition = "2021"
+authors = ["Banking Team <banking@company.com>"]
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+# Core dependencies
+async-trait = "0.1"
+thiserror = "1.0"
+
+# Database
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres"], default-features = false }
+
+# Async runtime
+tokio = { version = "1.0", features = ["sync"] }
+
+# Synchronization
+parking_lot = "0.12"
+
+# UUID support
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+[dev-dependencies]
+tokio = { version = "1.0", features = ["full"] }
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "uuid"], default-features = false }
+uuid = { version = "1.6", features = ["v4"] }
+serial_test = "3.0"
