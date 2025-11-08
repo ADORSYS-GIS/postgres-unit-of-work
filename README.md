@@ -92,7 +92,7 @@ session.rollback().await?;
 
 ## Database Configuration
 
-Default connection string: `postgres://postgres:postgres@localhost:5432/test_db`
+Default connection string: `postgres://postgres:postgres@localhost:5435/postgres_unit_of_work_db`
 
 Override with environment variable:
 ```bash

@@ -9,7 +9,7 @@ use common::{Order, OrderRepository, User, UserRepository};
 /// Helper function to get database URL from environment or use default
 fn get_database_url() -> String {
     std::env::var("DATABASE_URL")
-        .unwrap_or_else(|_| "postgres://postgres:postgres@localhost:5432/test_db".to_string())
+        .unwrap_or_else(|_| "postgres://postgres:postgres@localhost:5435/postgres_unit_of_work_db".to_string())
 }
 
 /// Setup the database connection pool and create tables
